@@ -8,287 +8,242 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+<script>
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+function printAnswers (answers) {
+    for (var i = 0; i < answers.length; i++) {
+        document.write(answers[i]);
+    }
+}
+</script>
 <style>
+.question {
+    text-align: center;
+    font-size: large;
+}
 
-    .question {
-        text-align: center;
-        font-size: large;
-    }
+.row {
+    margin-bottom: 50px;
+}
 
-    .row {
-        margin-bottom: 50px;
-    }
+.container {
+    border: 2px solid black;
+    border-radius: 12px;
+}
 
-    .container {
-        border: 2px solid black;
-        border-radius: 12px;
-    }
+body{
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    color: #333;
+    font-weight: 300;
+    text-align: center;
+    background-color: #f7f3e8;
+}
 
-    body{
-        font-size: 20px;
-        font-family: 'Work Sans', sans-serif;
-        color: #333;
-        font-weight: 300;
-        text-align: center;
-        background-color: #f7f3e8;
-    }
+h2{
+    font-family: 'Work Sans', sans-serif;
+    color: white;
+    font-weight: 300;
+    text-align: left;
+}
 
-    h2{
-        font-family: 'Work Sans', sans-serif;
-        color: white;
-        font-weight: 300;
-        text-align: left;
-    }
-    
-    h3{
-        font-family: 'Work Sans', sans-serif;
-        color: rgb(255, 255, 255);
-        font-weight: 300;
-        text-align: center;
-    }
+h3{
+    font-family: 'Work Sans', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    text-align: center;
+}
 
 
 </style>
-
 </head>
-<body>
-    <div class="jumbotron bg-gradient-dark text-dark">
-        <h1 class="display-3">The hardest quiz on the face of the earth</h1>
-        <h4 class="display-5">  Quiz created by Gerald Burke, Jeremy Vines, and MP3 graciously provided by Jonas Foglesong</h4>
+<body class="bg-secondary">
+        <div class="jumbotron bg-dark text-light">
+                <h1 class="display-3">The hardest quiz on the face of the earth</h1>
+                <h4 class="display-5">  Quiz created by Gerald Burke, Jeremy Vines, and MP3 graciously provided by Jonas Foglesong</h4>
+            </div>
+            <br>
+    <div class="container bg-dark text-white" id="q1">
+        <div class="row">
+            <div class="question col-sm-12">What primitive type stores textual data?</div>
+        </div>
+        <div class="row">
+            <script>
+            var answers = [
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(true, 1)'>String</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 1)'>Integer</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 1)'>Boolean</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 1)'>Float</button>"
+            ]
+            shuffle(answers);
+            printAnswers(answers);
+            </script>
+        </div>
     </div>
-    <br>
-    <div class="container bg-primary">
-    <h3>Multiple Choice</h3>
+    <div class="container bg-dark text-white" id="q2">
+        <div class="row">
+            <div class="question col-sm-12">What is the value of '01100100' in decimal?</div>
+        </div>
+        <div class="row">
+        <script>
+            var answers = [
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(true, 2)'>100</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 2)'>194</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 2)'>256</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 2)'>32</button>"
+            ]
+            shuffle(answers);
+            printAnswers(answers);
+        </script>
+        </div>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-        <h2>Question 1</h2>
+    <div class="container bg-dark text-white" id="q3">
         <div class="row">
-            <div class="question col-sm-12" id="q1"></div>
+            <div class="question col-sm-12">Who served as the lead software engineer on the Apollo 11 'Moon Mission'?</div>
         </div>
         <div class="row">
-            <div class="answer col-sm-3" id="q1a1"></div>
-            <input type="radio" class="col-sm-3" name="q1r1" id="q1r1">
-            <div class="answer col-sm-3" id="q1a2"></div>
-            <input type="radio" class="col-sm-3" name="q1r1" id="q1r2">
+        <script>
+            var answers = [
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(true, 3)'>Margaret Hamilton</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 3)'>Stephen Hawking</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 3)'>Linus Torvalds</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 3)'>Rene Descartes</button>"
+            ]
+            shuffle(answers);
+            printAnswers(answers);
+        </script>
         </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q1a3"></div>
-            <input type="radio" class="col-sm-3" name="q1r1" id="q1r3">
-            <div class="answer col-sm-3" id="q1a4"></div>
-            <input type="radio" class="col-sm-3" name="q1r1" id="q1r4">
-        </div>
-        </form>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 2</h2>
+    <div class="container bg-dark text-white" id="q4">
         <div class="row">
-            <div class="question col-sm-12" id="q2"></div>
+            <div class="question col-sm-12">Who first conceptualized the Theory of Forms?</div>
         </div>
         <div class="row">
-            <div class="answer col-sm-3" id="q2a1"></div>
-            <input type="radio" class="col-sm-3" name="q2r1" id="q2r1">
-            <div class="answer col-sm-3" id="q2a2"></div>
-            <input type="radio" class="col-sm-3" name="q2r1" id="q2r2">
+        <script>
+            var answers = [
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(true, 4)'>Plato</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 4)'>Aeschylus</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 4)'>Epictetus</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 4)'>Marcus Aurelius</button>"
+            ]
+            shuffle(answers);
+            printAnswers(answers);
+        </script>
         </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q2a3"></div>
-            <input type="radio" class="col-sm-3" name="q2r1" id="q2r3">
-            <div class="answer col-sm-3" id="q2a4"></div>
-            <input type="radio" class="col-sm-3" name="q2r1" id="q2r4">
-        </div>
-        </form>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 3</h2>
+    <div class="container bg-dark text-white" id="q5">
         <div class="row">
-            <div class="question col-sm-12" id="q3"></div>
+            <div class="question col-sm-12">Who wrote 'Crime and Punishment'?</div>
         </div>
         <div class="row">
-            <div class="answer col-sm-3" id="q3a1"></div>
-            <input type="radio" class="col-sm-3" name="q3r1" id="q3r1">
-            <div class="answer col-sm-3" id="q3a2"></div>
-            <input type="radio" class="col-sm-3" name="q3r1" id="q3r2">
+        <script>
+            var answers = [
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(true, 5)'>Fyodor Dostoyevsky</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 5)'>Leo Tolstoy</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 5)'>Vladimir Nabukov</button>",
+            "<button class='answer btn btn-info col-sm-3' onclick='answerProcess(false, 5)'>Tim Minchin</button>"
+            ]
+            shuffle(answers);
+            printAnswers(answers);
+        </script>
         </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q3a3"></div>
-            <input type="radio" class="col-sm-3" name="q3r1" id="q3r3">
-            <div class="answer col-sm-3" id="q3a4"></div>
-            <input type="radio" class="col-sm-3" name="q3r1" id="q3r4">
-        </div>
-        </form>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 4</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q4"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q4a1"></div>
-            <input type="radio" class="col-sm-3" name="q4r1" id="q4r1">
-            <div class="answer col-sm-3" id="q4a2"></div>
-            <input type="radio" class="col-sm-3" name="q4r1" id="q4r2">
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q4a3"></div>
-            <input type="radio" class="col-sm-3" name="q4r1" id="q4r3">
-            <div class="answer col-sm-3" id="q4a4"></div>
-            <input type="radio" class="col-sm-3" name="q4r1" id="q4r4">
-        </div>
-        </form>
+    <div class="container bg-dark text-white" id="q6">
+            <div class="row">
+                <div class="question col-sm-12">Essentialism posits that existence precedes essence.</div>
+            </div>
+            <div class="row">
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(false, 6)'>True</button>
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(true, 6)'>False</button>
+            </div>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 5</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q5"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q5a1"></div>
-            <input type="radio" class="col-sm-3" name="q5r1" id="q5r1">
-            <div class="answer col-sm-3" id="q5a2"></div>
-            <input type="radio" class="col-sm-3" name="q5r1" id="q5r2">
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q5a3"></div>
-            <input type="radio" class="col-sm-3" name="q5r1" id="q5r3">
-            <div class="answer col-sm-3" id="q5a4"></div>
-            <input type="radio" class="col-sm-3" name="q5r1" id="q5r4">
-        </div>
-        </form>
+    <div class="container bg-dark text-white" id="q7">
+            <div class="row">
+                <div class="question col-sm-12">Euclid is considered the 'Father of Geometry'</div>
+            </div>
+            <div class="row">
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(true, 7)'>True</button>
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(false, 7)'>False</button>
+            </div>
     </div>
-    <br>
-    <br>
-    <div class="container bg-danger">
-    <h3>True or False</h3>
+    <div class="container bg-dark text-white" id="q8">
+            <div class="row">
+                <div class="question col-sm-12">The autonomous region of Rojava was founded on principles set forth by American Ecologist and Anarchist Philosopher Murray Bookchin</div>
+            </div>
+            <div class="row">
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(true, 8)'>True</button>
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(false, 8)'>False</button>
+            </div>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 6</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q6"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q6a1">True</div>
-            <input type="radio" class="col-sm-3" name="q6r1" id="q6r1">
-            <div class="answer col-sm-3" id="q6a2">False</div>
-            <input type="radio" class="col-sm-3" name="q6r1" id="q2r2">
-        </div>
-        </form>
+    <div class="container bg-dark text-white" id="q9">
+            <div class="row">
+                <div class="question col-sm-12">The tallest statue in the world, the Statue of Unity, completed in 2018, stands on Victoria Peak in Hong Kong</div>
+            </div>
+            <div class="row">
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(false, 9)'>True</button>
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(true, 9)'>False</button>
+            </div>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 7</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q7"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q7a1">True</div>
-            <input type="radio" class="col-sm-3" name="q7r1" id="q7r1">
-            <div class="answer col-sm-3" id="q7a2">False</div>
-            <input type="radio" class="col-sm-3" name="q7r1" id="q7r2">
-        </div>
-        </form>
+    <div class="container bg-dark text-white" id="q10">
+            <div class="row">
+                <div class="question col-sm-12">The 'Major Scale' in Western tradition consists of intervals in the sequence of 'Whole-Whole-Half-Whole-Whole-Whole-Half'</div>
+            </div>
+            <div class="row">
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(true, 10)'>True</button>
+                <button class='answer btn btn-info col-sm-6' onclick='answerProcess(false, 10)'>False</button>
+            </div>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 8</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q8"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q8a1">True</div>
-            <input type="radio" class="col-sm-3" name="q8r1" id="q8r1">
-            <div class="answer col-sm-3" id="q8a2">False</div>
-            <input type="radio" class="col-sm-3" name="q8r1" id="q8r2">
-        </div>
-        </form>
+    <div class="container bg-dark text-white" id="q11">
+        <p id="results"></p>
     </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 9</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q9"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q9a1">True</div>
-            <input type="radio" class="col-sm-3" name="q9r1" id="q9r1">
-            <div class="answer col-sm-3" id="q9a2">False</div>
-            <input type="radio" class="col-sm-3" name="q9r1" id="q9r2">
-        </div>
-        </form>
-    </div>
-    <br>
-    <div class="container bg-dark text-white">
-        <form>
-                <h2>Question 10</h2>
-        <div class="row">
-            <div class="question col-sm-12" id="q10"></div>
-        </div>
-        <div class="row">
-            <div class="answer col-sm-3" id="q10a1">True</div>
-            <input type="radio" class="col-sm-3" name="q10r1" id="q10r1">
-            <div class="answer col-sm-3" id="q10a2">False</div>
-            <input type="radio" class="col-sm-3" name="q10r1" id="q10r2">
-        </div>
-        </form>
-    </div>
-    <br>
-    <button type="button" class="btn btn-primary">Submit Quiz</button>
-    <br>
-    
     
     
 
     <script>
-        var question1 = {prompt: "How many?", answer: "", answers: ["1", "2", "5", "7"]};
-        var question2 = {prompt: "Why?", answer: "", answers: ["bc", "No Reason", "idk", "lol"]};
-        var question3 = {prompt: "Can I have it?", answer: "", answers: ["No", "Get Your Own", "Give me yours", "Stop"]};
-        var question4 = {prompt: "What is a fish", answer: "", answers: ["birb", "brib", "bob", "naw"]};
-        var question5 = {prompt: "Salut?", answer: "", answers: ["Quoi?", "Un", "Je Ne Se Quoi", "Oui, mon cher!"]};
-        var question6 = {prompt: "Anything", answer: false};
-        var question7 = {prompt: "Nothing", answer: false};
-        var question8 = {prompt: "Something", answer: false};
-        var question9 = {prompt: "Okay", answer: false};
-        var question10 = {prompt: "Not really", answer: false};
-    
-        var questions = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10];
-
-        for (var i = 1; i < questions.length + 1; i++) {
-            document.write(i);
-            if (i <= 5) {
-                setQuestion(i, true);
+        var score = 0;
+        $("#q2").hide(0);
+        $("#q3").hide(0);
+        $("#q4").hide(0);
+        $("#q5").hide(0);
+        $("#q6").hide(0);
+        $("#q7").hide(0);
+        $("#q8").hide(0);
+        $("#q9").hide(0);
+        $("#q10").hide(0);
+        $("#q11").hide(0);
+        function answerProcess(isCorrect, questionNumber) {
+            if (isCorrect) {
+                score += 10;
+                $("#q" + questionNumber).toggle(0);
+                $("#q" + (questionNumber + 1)).toggle(0)
             }
             else {
-                setQuestion(i, false);
+                $("#q" + questionNumber).toggle(0);
+                $("#q" + (questionNumber + 1)).toggle(0)
             }
-        }
-
-        function setQuestion(questionNumber, isMC) {
-            if (isMC) {
-                document.getElementById("q" + questionNumber).innerHTML = questions[questionNumber - 1].prompt;
-                document.getElementById("q" + questionNumber + "a1").innerHTML = questions[questionNumber - 1].answers[0];
-                document.getElementById("q" + questionNumber + "a2").innerHTML = questions[questionNumber - 1].answers[1];
-                document.getElementById("q" + questionNumber + "a3").innerHTML = questions[questionNumber - 1].answers[2];
-                document.getElementById("q" + questionNumber + "a4").innerHTML = questions[questionNumber - 1].answers[3];
+            if (score == 100) {
+                document.getElementById("results").innerHTML = "Wow, 100! Impressive!"
             }
-            else if (!isMC) {
-                document.getElementById("q" + questionNumber).innerHTML = questions[questionNumber - 1].prompt;
+            else if (score < 100 && score >= 80) {
+                document.getElementById("results").innerHTML = "Hey, " + score + " is pretty great!"
             }
-        }
-        
+            else if (score < 80 && score >= 70) {
+                document.getElementById("results").innerHTML = "You know, " + score + " isn't too shabby."
+            }
+            else if (score < 70) {
+                document.getElementById("results").innerHTML = score + " isn't too good. You can do better."
+            }
+        }   
     </script>
 </body>
 </html>
