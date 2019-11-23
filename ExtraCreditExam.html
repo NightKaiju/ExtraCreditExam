@@ -20,15 +20,50 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     }
 
     .container {
-        border: solid 2px black;
+        border: 2px solid black;
+        border-radius: 12px;
     }
+
+    body{
+        font-size: 20px;
+        font-family: 'Work Sans', sans-serif;
+        color: #333;
+        font-weight: 300;
+        text-align: center;
+        background-color: #f7f3e8;
+    }
+
+    h2{
+        font-family: 'Work Sans', sans-serif;
+        color: white;
+        font-weight: 300;
+        text-align: left;
+    }
+    
+    h3{
+        font-family: 'Work Sans', sans-serif;
+        color: rgb(255, 255, 255);
+        font-weight: 300;
+        text-align: center;
+    }
+
 
 </style>
 
 </head>
 <body>
-    <div class="container">
+    <div class="jumbotron bg-gradient-dark text-dark">
+        <h1 class="display-3">The hardest quiz on the face of the earth</h1>
+        <h4 class="display-5">  Quiz created by Gerald Burke, Jeremy Vines, and MP3 graciously provided by Jonas Foglesong</h4>
+    </div>
+    <br>
+    <div class="container bg-primary">
+    <h3>Multiple Choice</h3>
+    </div>
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+        <h2>Question 1</h2>
         <div class="row">
             <div class="question col-sm-12" id="q1"></div>
         </div>
@@ -46,8 +81,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 2</h2>
         <div class="row">
             <div class="question col-sm-12" id="q2"></div>
         </div>
@@ -65,8 +102,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 3</h2>
         <div class="row">
             <div class="question col-sm-12" id="q3"></div>
         </div>
@@ -84,8 +123,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 4</h2>
         <div class="row">
             <div class="question col-sm-12" id="q4"></div>
         </div>
@@ -103,8 +144,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 5</h2>
         <div class="row">
             <div class="question col-sm-12" id="q5"></div>
         </div>
@@ -122,8 +165,15 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <br>
+    <div class="container bg-danger">
+    <h3>True or False</h3>
+    </div>
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 6</h2>
         <div class="row">
             <div class="question col-sm-12" id="q6"></div>
         </div>
@@ -135,8 +185,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 7</h2>
         <div class="row">
             <div class="question col-sm-12" id="q7"></div>
         </div>
@@ -148,8 +200,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 8</h2>
         <div class="row">
             <div class="question col-sm-12" id="q8"></div>
         </div>
@@ -161,8 +215,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 9</h2>
         <div class="row">
             <div class="question col-sm-12" id="q9"></div>
         </div>
@@ -174,8 +230,10 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
-    <div class="container">
+    <br>
+    <div class="container bg-dark text-white">
         <form>
+                <h2>Question 10</h2>
         <div class="row">
             <div class="question col-sm-12" id="q10"></div>
         </div>
@@ -187,6 +245,9 @@ https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
         </div>
         </form>
     </div>
+    <br>
+    <button type="button" class="btn btn-primary">Submit Quiz</button>
+    <br>
     
     
     
